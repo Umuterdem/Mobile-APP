@@ -3,7 +3,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'dart:math' as math;
 import 'package:flutter/src/widgets/framework.dart';
 
-import 'center_widget/center_widget.dart';
+import 'components/center_widget/center_widget.dart';
+import 'components/center_widget/login_content.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -59,7 +60,8 @@ class _MyWidgetState extends State<LoginScreen> {
           Positioned(top: -160, left: -30, child: topWidget(screenSize.width)),
           Positioned(
               bottom: -180, left: -40, child: bottomWidget(screenSize.width)),
-          CenterWidget(size: screenSize)
+          CenterWidget(size: screenSize),
+          const Logincontent(),
         ],
       ),
     );
