@@ -93,6 +93,22 @@ class Logincontent extends StatelessWidget {
     );
   }
 
+  Widget forgotPassword() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 110),
+      child: TextButton(
+        onPressed: () {},
+        child: const Text(
+          "Şifremi Unuttum ?",
+          style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: kSecondaryColor),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     const currentScreen = Screens.createAccount;
@@ -105,18 +121,24 @@ class Logincontent extends StatelessWidget {
           child: Stack(
             children: [
               Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  inputField("isim", Ionicons.person_add_outline),
-                  inputField("Soyisim", Ionicons.person_add_outline),
-                  inputField("Email", Ionicons.mail_open_outline),
-                  inputField("Şifre", Ionicons.key_outline),
-                  loginButton("Giriş yap"),
-                  orDivider(),
-                  Logos()
-                ],
-              )
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: currentScreen == Screens.welcomeBack
+                      ? [
+                          inputField("isim", Ionicons.person_add_outline),
+                          inputField("Soyisim", Ionicons.person_add_outline),
+                          inputField("Email", Ionicons.mail_open_outline),
+                          inputField("Şifre", Ionicons.key_outline),
+                          loginButton("Kayıt ol"),
+                          orDivider(),
+                          Logos()
+                        ]
+                      : [
+                          inputField("Email", Ionicons.mail_open_outline),
+                          inputField("Şifre", Ionicons.key_outline),
+                          loginButton("Giriş Yap"),
+                          forgotPassword(),
+                        ])
             ],
           ),
         )
