@@ -1,5 +1,5 @@
-import 'package:app1/Screens/Welcome/welcome_screen.dart';
-import 'package:app1/constanst.dart';
+import 'package:app1/screens/login_screen/login_screen.dart';
+import 'package:app1/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,10 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'TKM AKADEMİ',
-        theme: ThemeData(
-            primaryColor: kPrimayColor,
-            scaffoldBackgroundColor: kPrimaylightColor),
-        home: WelcomeScreen());
+      title: 'TKM AKADEMİ',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          scaffoldBackgroundColor: kBackgroundColor,
+          textTheme:
+              Theme.of(context).textTheme.apply(bodyColor: kPrimayColor)),
+      home: const LoginScreen(),
+    );
   }
 }
