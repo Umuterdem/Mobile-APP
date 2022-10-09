@@ -14,7 +14,7 @@ class _ToptextState extends State<Toptext> {
   Widget build(BuildContext context) {
     return Text(
       widget.screen == Screens.createAccount
-          ? "Hesap\nOluştur"
+          ? "Hesap\n       Oluştur"
           : "Tekrar\rHoşgeldiniz",
       style: const TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
     );
