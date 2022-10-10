@@ -61,7 +61,7 @@ class _MyWidgetState extends State<LoginScreen> {
           Positioned(
               bottom: -180, left: -40, child: bottomWidget(screenSize.width)),
           CenterWidget(size: screenSize),
-          const Logincontent(),
+          const LoginContent(),
         ],
       ),
     );

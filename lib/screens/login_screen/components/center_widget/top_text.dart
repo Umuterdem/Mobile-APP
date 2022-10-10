@@ -1,22 +1,41 @@
-import 'package:app1/screens/login_screen/components/center_widget/login_content.dart';
 import 'package:flutter/material.dart';
 
-class Toptext extends StatefulWidget {
-  final Screens screen;
-  const Toptext({super.key, required this.screen});
+import '../../../../utils/helper_functions.dart';
+import '../../animations/change_screen_animation.dart';
+import 'login_content.dart';
+
+class TopText extends StatefulWidget {
+  const TopText({Key? key}) : super(key: key);
 
   @override
-  State<Toptext> createState() => _ToptextState();
+  State<TopText> createState() => _TopTextState();
 }
 
-class _ToptextState extends State<Toptext> {
+class _TopTextState extends State<TopText> {
+  @override
+  void initState() {
+    ChangeScreenAnimation.topTextAnimation.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        setState(() {});
+      }
+    });
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Text(
-      widget.screen == Screens.createAccount
-          ? "Hesap\n       Oluştur"
-          : "Tekrar\rHoşgeldiniz",
-      style: const TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
+    return HelperFunctions.wrapWithAnimetedBuilder(
+      animation: ChangeScreenAnimation.topTextAnimation,
+      child: Text(
+        ChangeScreenAnimation.currentScreen == Screens.createAccount
+            ? 'Create\nAccount'
+            : 'Welcome\nBack',
+        style: const TextStyle(
+          fontSize: 40,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
     );
   }
 }

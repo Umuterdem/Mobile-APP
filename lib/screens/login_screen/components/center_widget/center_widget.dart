@@ -2,18 +2,22 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import 'center_Widget_painter.dart';
 import 'center_widget_clipper.dart';
+import 'center_widget_painter.dart';
 
 class CenterWidget extends StatelessWidget {
   final Size size;
 
-  const CenterWidget({super.key, required this.size});
+  const CenterWidget({
+    Key? key,
+    required this.size,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final width = size.width;
     final height = size.height;
+
     final path = Path();
     path.moveTo(0, 0.17 * height);
     path.cubicTo(
@@ -58,6 +62,7 @@ class CenterWidget extends StatelessWidget {
     );
     path.lineTo(0, height);
     path.close;
+
     return Stack(
       children: [
         CustomPaint(
@@ -68,13 +73,19 @@ class CenterWidget extends StatelessWidget {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
             child: Container(
-                decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment(1, -0.6),
-                        end: Alignment(-1, 0.8),
-                        colors: [Color(0x803DE896), Color(0x4D76E3AE)]))),
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment(1, -0.6),
+                  end: Alignment(-1, 0.8),
+                  colors: [
+                    Color(0x803DE896),
+                    Color(0x4D76E3AE),
+                  ],
+                ),
+              ),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
