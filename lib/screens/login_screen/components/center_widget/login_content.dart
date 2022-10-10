@@ -1,3 +1,4 @@
+import 'package:app1/screens/login_screen/components/center_widget/bottom_text.dart';
 import 'package:app1/screens/login_screen/components/center_widget/top_text.dart';
 import 'package:app1/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -123,7 +124,7 @@ class Logincontent extends StatelessWidget {
               Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: currentScreen == Screens.welcomeBack
+                  children: currentScreen == Screens.createAccount
                       ? [
                           inputField("isim", Ionicons.person_add_outline),
                           inputField("Soyisim", Ionicons.person_add_outline),
@@ -140,6 +141,13 @@ class Logincontent extends StatelessWidget {
                           forgotPassword(),
                         ])
             ],
+          ),
+        ),
+        const Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: EdgeInsets.only(bottom: 50),
+            child: BottomText(screen: currentScreen),
           ),
         )
       ],
