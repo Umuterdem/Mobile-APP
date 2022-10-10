@@ -1,8 +1,8 @@
 import 'package:app1/utils/constants.dart';
+import 'package:app1/utils/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 
-import '../../../../utils/helper_functions.dart';
 import '../../animations/change_screen_animation.dart';
 
 import 'bottom_text.dart';
@@ -84,13 +84,13 @@ class _LoginContentState extends State<LoginContent>
           Flexible(
             child: Container(
               height: 1,
-              color: kPrimayColor,
+              color: kPrimaryColor,
             ),
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              'or',
+              'Veya',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
@@ -100,7 +100,7 @@ class _LoginContentState extends State<LoginContent>
           Flexible(
             child: Container(
               height: 1,
-              color: kPrimayColor,
+              color: kPrimaryColor,
             ),
           ),
         ],
@@ -128,7 +128,7 @@ class _LoginContentState extends State<LoginContent>
       child: TextButton(
         onPressed: () {},
         child: const Text(
-          'Forgot Password?',
+          'Şifremi Unuttum ? ',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -142,18 +142,19 @@ class _LoginContentState extends State<LoginContent>
   @override
   void initState() {
     createAccountContent = [
-      inputField('Name', Ionicons.person_outline),
-      inputField('Email', Ionicons.mail_outline),
-      inputField('Password', Ionicons.lock_closed_outline),
-      loginButton('Sign Up'),
+      inputField('İsim', Ionicons.person_outline),
+      inputField('Soyisim', Ionicons.person_outline),
+      inputField('E-posta', Ionicons.mail_outline),
+      inputField('Şifre', Ionicons.lock_closed_outline),
+      loginButton('Kayıt Ol'),
       orDivider(),
       logos(),
     ];
 
     loginContent = [
-      inputField('Email', Ionicons.mail_outline),
-      inputField('Password', Ionicons.lock_closed_outline),
-      loginButton('Log In'),
+      inputField('E-posta', Ionicons.mail_outline),
+      inputField('Şifre', Ionicons.lock_closed_outline),
+      loginButton('Giriş Yap'),
       forgotPassword(),
     ];
 
@@ -164,14 +165,14 @@ class _LoginContentState extends State<LoginContent>
     );
 
     for (var i = 0; i < createAccountContent.length; i++) {
-      createAccountContent[i] = HelperFunctions.wrapWithAnimetedBuilder(
+      createAccountContent[i] = HelperFunctions.wrapWithAnimatedBuilder(
         animation: ChangeScreenAnimation.createAccountAnimations[i],
         child: createAccountContent[i],
       );
     }
 
     for (var i = 0; i < loginContent.length; i++) {
-      loginContent[i] = HelperFunctions.wrapWithAnimetedBuilder(
+      loginContent[i] = HelperFunctions.wrapWithAnimatedBuilder(
         animation: ChangeScreenAnimation.loginAnimations[i],
         child: loginContent[i],
       );

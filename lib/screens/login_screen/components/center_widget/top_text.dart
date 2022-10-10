@@ -1,7 +1,7 @@
+import 'package:app1/screens/login_screen/animations/change_screen_animation.dart';
+import 'package:app1/utils/helper_functions.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../utils/helper_functions.dart';
-import '../../animations/change_screen_animation.dart';
 import 'login_content.dart';
 
 class TopText extends StatefulWidget {
@@ -25,12 +25,12 @@ class _TopTextState extends State<TopText> {
 
   @override
   Widget build(BuildContext context) {
-    return HelperFunctions.wrapWithAnimetedBuilder(
+    return HelperFunctions.wrapWithAnimatedBuilder(
       animation: ChangeScreenAnimation.topTextAnimation,
       child: Text(
         ChangeScreenAnimation.currentScreen == Screens.createAccount
-            ? 'Create\nAccount'
-            : 'Welcome\nBack',
+            ? 'Hesap\n     Oluştur'
+            : 'Tekrar\nHoşgeldiniz',
         style: const TextStyle(
           fontSize: 40,
           fontWeight: FontWeight.w600,

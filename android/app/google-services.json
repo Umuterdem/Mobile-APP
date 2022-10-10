@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "412179521007",
+    "project_id": "tkmakademiecommerce",
+    "storage_bucket": "tkmakademiecommerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412179521007:android:bb0b75ae188cf843482a1a",
+        "android_client_info": {
+          "package_name": "com.example.app1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412179521007-1738avsp035u466fiivj64erg13pa2ki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFY1hJ_kHAQCiX8aRBvHvOJQE1DAslLl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412179521007-1738avsp035u466fiivj64erg13pa2ki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
